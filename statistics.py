@@ -21,6 +21,13 @@ data = [
 ]
 
 
+def set_excel_info(chart, x: str):
+    """x：图表标题"""
+    chart.set_title({'name': x})
+    chart.set_x_axis({'name': 'Member name'})
+    chart.set_y_axis({'name': 'Weekly volume data'})
+
+
 # 代码量统计
 def code_count():
     data_code_list = data.copy()
@@ -59,16 +66,13 @@ def code_count():
     })
 
     # 4.设置图表的title和x，y轴信息
-    chart.set_title({'name': '制造协同周代码量分析表'})
-    chart.set_x_axis({'name': 'Member name'})
-    chart.set_y_axis({'name': 'Weekly code volume data'})
+    set_excel_info(chart, '制造协同周代码量分析表')
 
     # 设置图表的风格
     chart.set_style(1)
 
     # 把图表插入worksheet以及偏移
     worksheet.insert_chart('A10', chart, {'X_offset': 25, 'y_sheet': 10})
-    #workbook.close()
 
 
 # 任务量统计
@@ -77,7 +81,6 @@ def assignment_volumn():
     assign_last_week = [0, 1, 8, 2, 5, 9]
     assign_this_week = [1, 0, 1, 3, 4, 0]
     assign_data_list += assign_last_week, assign_this_week
-    print(assign_data_list)
 
     # 写入表头
     worksheet.write_row('J1', headings, bold)
@@ -106,9 +109,7 @@ def assignment_volumn():
     })
 
     # 4.设置图表的title和x，y轴信息
-    chart_2.set_title({'name': '制造协同周任务量分析表'})
-    chart_2.set_x_axis({'name': 'Member name'})
-    chart_2.set_y_axis({'name': 'Weekly code volume data'})
+    set_excel_info(chart_2, '制造协同周任务量分析表')
 
     # 设置图表的风格
     chart_2.set_style(1)
