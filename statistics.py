@@ -32,8 +32,8 @@ def set_excel_info(chart, x: str):
 def code_count():
     data_code_list = data.copy()
     # 上周代码量数据
-    list_last_week = [795, 1789, 357, 653, 14438, 506]
-    list_this_week = [1431, 2228, 1686, 1849, 14619, 531]
+    list_last_week = [1431, 2228, 1686, 1849, 14619, 531]
+    list_this_week = [745, 271, 2105, 723, 1767, 740]
     data_code_list += list_last_week, list_this_week
     # print(type(data_code_list[1][2]))
     # 写入表头
@@ -78,8 +78,8 @@ def code_count():
 # 任务量统计
 def assignment_volumn():
     assign_data_list = data.copy()
-    assign_last_week = [0, 1, 8, 2, 5, 9]
-    assign_this_week = [1, 0, 1, 3, 4, 0]
+    assign_last_week = [1, 0, 1, 3, 4, 0]
+    assign_this_week = [6, 6, 2, 8, 2, 11]
     assign_data_list += assign_last_week, assign_this_week
 
     # 写入表头
